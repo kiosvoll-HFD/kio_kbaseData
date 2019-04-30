@@ -26,3 +26,4 @@ BEGIN
       RETURN  
 END 
 
+/* dette er ein liten test*/
