@@ -1,2 +1,116 @@
 bla bla bla
  test test tekst blei lagt til her...
+select * From sysobjects order by crdate desc
+
+update norgehav_punktflytt set ogr_geometry  = ogr_geometry.ReorientObject() 
+
+select top 1 * From kommunarn5000 where kommunenummer = '1431'
+
+select top 100 ogr_geometry.ReorientObject() From kommunarn5000 --where kommunenummer = '1431'
+
+select top 100 * from kommunarnorge where kommunenummer like '14%'
+
+select ogr_geometry  from norgehav
+
+select ogr_fid, ogr_geometry.ReorientObject() as ogr_geometry2, gml_id, oppdateringsdato into  norgehavInvert   from norgehav
+
+select  ogr_geometry2 from norgehavInvert where ogr_fid = 48
+select * From [dbo].[sfj_kom] where kommunenummer = 1401
+
+
+
+select ogr_geometry.STIntersects( (select  b.ogr_geometry2 from norgehavInvert b where ogr_fid = 48) ) as NyGeo
+From [dbo].[sfj_kom] where kommunenummer = 1401
+
+select ogr_geometry.STIntersection( (select  b.ogr_geometry2 from norgehavInvert b where ogr_fid = 48) ) as NyGeo
+From [dbo].[sfj_kom] where kommunenummer like '14%'
+
+
+
+select ogr_geometry.STSymDifference( (select  b.ogr_geometry2 from norgehavInvert b where ogr_fid = 48) ) as NyGeo
+From [dbo].[sfj_kom] where kommunenummer like '1401%'
+
+
+select ogr_geometry.STDifference( (select  b.ogr_geometry2 from norgehavInvert b where ogr_fid = 48) ) as NyGeo
+From [dbo].[sfj_kom] where kommunenummer like '14%'
+
+
+STDifference 
+
+select  ogr_geometry2 from norgehavInvert where ogr_fid = 48
+select * From [dbo].[sfj_kom] where kommunenummer  like  '14%'
+
+
+--
+SELECT Geography::UnionAggregate(ogr_geometry2) HavGeo into norgehavInvertUnion  FROM norgehavInvert
+  
+select * from norgehav_punktflytt
+SELECT Geography::UnionAggregate(ogr_geometry) HavGeo into norgehavInvertUnionpunktflytt   FROM norgehav_punktflytt
+
+select * from norgehavInvertUnionpunktflytt
+  
+select ogr_geometry.STDifference( (select HavGeo from norgehavInvertUnion) ) as NyGeo
+From [dbo].[sfj_kom] where kommunenummer like '14%'
+select HavGeo from norgehavInvertUnion
+
+
+
+select ogr_geometry.STDifference( (select HavGeo from norgehavInvertUnionpunktflytt) ) as NyGeo
+From [dbo].[sfj_kom] where kommunenummer like '14%'
+select HavGeo from norgehavInvertUnion
+
+select ogr_geometry.STDifference( (select HavGeo from norgehavInvertUnion) ) as NyGeo,kommunenummer,substring(navn,4,100) as navn 
+into #komKart 
+From kommunarnorge
+-- 
+select * From #komkart where kommunenummer < 1700
+
+select  * from kommunarnorge 
+
+
+  select  b.ogr_geometry2 from norgehavInvert
+
+select * from kommunarn5000
+
+select  ogr_geometry.STDifference( (select HavGeo from norgehavInvertUnion) ) as NyGeo,
+			ogr_fid,kommunenummer as komnr, 
+			navn as kommune into #T  From kommunarn5000 
+--- 40 sek 
+select * From #t 
+
+
+
+select ogr_fid,  ogr_geometry.ReorientObject() as ogr_geometry, gml_id, oppdateringsdato, kommunenummer, navn 
+into #kom2 			From kommunarn5000 
+select * From #kom2
+
+-- drop table #komkart
+select ogr_geometry.STDifference( (select HavGeo from norgehavInvertUnionpunktflytt) ) as NyGeo,
+		kommunenummer as komnr,
+		navn as kommune 
+into #komkart 
+From #kom2
+-- 40 sek.
+
+select * From #komkart where komnr between '1000' and '1600'
+
+
+
+
+-- drop table norgehavInvertUnionBuff10
+select HavGeo.STBuffer(100) HavGeoBuff10 into norgehavInvertUnionBuff10 from norgehavInvertUnion
+
+
+-- drop table #komkart4
+select ogr_geometry.STDifference( (select HavGeoBuff10 from norgehavInvertUnionBuff10) ) as NyGeo,
+		kommunenummer as komnr,
+		navn as kommune 
+into #komkart4 
+From #kom2
+-- 40 sek.
+
+select * From #komkart4 where komnr between '1000' and '1600'
+
+
+select HavGeo.STBuffer(10) from norgehavInvertUnion
+
