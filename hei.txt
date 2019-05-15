@@ -114,3 +114,14 @@ select * From #komkart4 where komnr between '1000' and '1600'
 
 select HavGeo.STBuffer(10) from norgehavInvertUnion
 
+#' 
+make_map <- function(data = NULL, map = NULL, type = "leaflet", utm33 = TRUE) {
+  output <- NULL
+
+  
+  
+  kart_og_data <- dplyr::inner_join(map, data,by = "area=area")
+  
+  
+  output <- tmap::tm_shape(kart_og_data) + 
+    tm_polygons("numerater",   id = "area", palette = "viridis") 
