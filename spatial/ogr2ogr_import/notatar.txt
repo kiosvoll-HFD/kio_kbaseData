@@ -1,1 +1,7 @@
 heisan detter er ei fil
+
+i windows før køyring av ogr2ogr.exe så må denne mappa vere tilgjengeleg. helse i oppdatart av windows.:
+set GDAL_DATA=C:\Program Files\QGIS 3.4\share\gdal
+
+-- må stå i denne mappa for å køyre import med ogr2ogr
+C:\Program Files\QGIS 3.4\bin\ogr2ogr.exe 
