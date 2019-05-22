@@ -8,3 +8,11 @@ C:\Program Files\QGIS 3.4\bin\ogr2ogr.exe
 
 
 ogr2ogr.exe -overwrite -f MSSQLSpatial "MSSQL:server=database..serve....er..er;database=dat..ta..ba..s..e;trusted_connection=yes"  "c:\mappe\mappe2\kart\Befolkningsrute_SFJ_5000.geojson" -t_srs "EPSG:4326" -lco "GEOM_TYPE=geography" -lco "SCHEMA=ETL" -lco "OVERWRITE=YES" -progress
+
+
+
+
+
+
+stundom kan det vere aktuelt å køyre denne for å reorientere objektet:
+update etl.befolkningsrute_sfj_5000 set ogr_geometry  = ogr_geometry.ReorientObject()
