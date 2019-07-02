@@ -1,0 +1,53 @@
+
+lage praktisk eksempel på kvare av desse typane , om eksemåel blir lange så lag heller ein kommenar om at resten ligg i eiga fil.
+
+https://docs.microsoft.com/en-us/sql/t-sql/spatial-geometry/ogc-methods-on-geometry-instances?view=sql-server-2017
+
+Lage eit eksempel på kvar av desse 
+
+#### :::     STArea
+#### :::     STAsBinary
+#### :::     STAsText
+#### :::     STBoundary
+#### :::     STBuffer
+#### :::     STCentroid
+#### :::     STContains
+#### :::     STConvexHull
+#### :::     STCrosses
+#### :::     STCurveN (geometry Data Type)
+#### :::     STCurveToLine (geometry Data Type)
+#### :::     STDifference
+#### :::     STDimension
+#### :::     STDisjoint
+#### :::     STDistance
+#### :::     STEndpoint
+#### :::     STEnvelope
+#### :::     STEquals
+#### :::     STExteriorRing
+#### :::     STGeometryN
+#### :::     STGeometryType
+#### :::     STInteriorRingN
+#### :::     STIntersection
+#### :::     STIntersects
+#### :::     STIsClosed
+#### :::     STIsEmpty
+#### :::     STIsRing
+#### :::     STIsSimple
+#### :::     STIsValid
+#### :::     STLength
+#### :::     STNumCurves (geometry Data Type)
+#### :::     STNumGeometries
+#### :::     STNumInteriorRing
+#### :::     STNumPoints
+#### :::     STOverlaps
+#### :::     STPointN
+#### :::     STPointOnSurface
+#### :::     STRelate
+#### :::     STSrid
+#### :::     STStartPoint
+#### :::     STSymDifference
+#### :::     STTouches
+#### :::     STUnion
+#### :::     STWithin
+#### :::     STX
+#### :::     STY
