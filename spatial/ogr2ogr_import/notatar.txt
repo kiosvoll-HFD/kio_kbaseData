@@ -1,4 +1,4 @@
-heisan detter er ei fil
+
 
 i windows før køyring av ogr2ogr.exe så må denne mappa vere tilgjengeleg. helse i oppdatart av windows.:
 set GDAL_DATA=C:\Program Files\QGIS 3.4\share\gdal
