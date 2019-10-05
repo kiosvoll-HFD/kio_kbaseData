@@ -1,1 +1,5 @@
 import
+
+filimport til ms sql server
+for å unng å promblem med æ ø å i import frå tekstfiler  
+prøv gjerne med  Unicode string [DT_WSTR]
