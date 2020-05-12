@@ -1,12 +1,12 @@
-fylkesnr,fylkenamn,befolkning
-42,Agder,307231
-34,Innlandet,371385
-15,Møre og Romsdal,265238
-30,Viken,1241165
-38,Vestfold og Telemark,419396
-03,Oslo,693494
-50,Trøndelag,468702
-46,Vestland,636531
-54,Troms og Finnmark,243311
-18,Nordland,241235
-11,Rogaland,479892
+ffylkenamn,befolkning
+Agder,307231
+Innlandet,371385
+Møre og Romsdal,265238
+Viken,1241165
+Vestfold og Telemark,419396
+Oslo,693494
+Trøndelag,468702
+Vestland,636531
+Troms og Finnmark,243311
+Nordland,241235
+Rogaland,479892
