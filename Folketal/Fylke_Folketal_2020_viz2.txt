@@ -1,4 +1,4 @@
-﻿fylkesnr,fylkenamn,befolkning
+fylkesnr,fylkenamn,befolkning
 42,Agder,307231
 34,Innlandet,371385
 15,Møre og Romsdal,265238
